@@ -1,0 +1,18 @@
+
+
+
+{{> "navBar"}}
+<main class="p-4"> 
+{{#if mensaje }}
+<div class="alert alert-dark" role="alert">{{mensaje}}</div>
+{{/if}}
+
+
+<a href="/book/create" class="btn btn-primary">Agregar libro</a>
+
+{{#each books }}
+    
+{{>Card item=this}}
+{{/each}}
+</main>
+

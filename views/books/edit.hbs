@@ -1,0 +1,13 @@
+{{> "navBar"}}
+<main class="p-4">
+
+{{#if mensaje }}
+<div class="alert alert-dark" role="alert">{{mensaje}}</div>
+{{/if}}
+<a href="/book/index" class="btn btn-primary">Libros</a>
+<h1>Agregar libro</h1>
+<form action="/book/update/{{book._id}}" method="post">
+{{> "book/formBook"}}
+</form>
+
+</main>

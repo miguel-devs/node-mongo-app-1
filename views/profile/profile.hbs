@@ -1,0 +1,28 @@
+{{> "navBar"}}
+<main class="p-4">
+
+{{#if mensaje}}
+<div class="alert alert-dark" role="alert">{{mensaje}}</div>
+{{/if}}
+<div class="text-center mb-5">
+
+{{#if fotoPerfil}}
+<img src="/image/{{fotoPerfil}}" class="rounded-circle" alt="user-default" style="width:200px;height:200px">
+{{else}}
+<img src="/image/user-default.jpg" class="rounded-circle" alt="user-default"  style="width:200px;height:200px">
+
+{{/if}}
+  
+
+
+<p>Subir foto de perfil</p>
+
+</div>
+<div class="d-flex justify-content-center"> 
+<form action= "/profile/save?_csrf={{csrfToken}}" method="post" enctype="multipart/form-data">
+    <input type="file" name="imageProfile" id="imageProfile">
+    <button type="submit" class="btn btn-primary"/>Guardar</button>
+</form>
+</div>
+
+</main>
